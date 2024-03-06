@@ -2,18 +2,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class DrinksMenu{
-	
+    static private TextUI ui;
 
   public static void main(String[] args) {
 
-
+      ui = new TextUI();
       Scanner scan = new Scanner(System.in);
 
 
-      System.out.println("Hvor gammel er du?");//Stille brugeren et spørgsmål
       // TODO: Reducer dette til én linje ved at anvende TextUI metoden getNumericInput() i stedet for
-      String input = scan.nextLine();          //Give brugere et sted at placere sit svar og vente på svaret
-      int age = Integer.parseInt(input);       //Konvertere svaret til et tal
+      String myquestion = "Hvor gammel er du?";
+      int age = ui.promptNumeric("Hvor gammel er du?");
 
 
     /*
@@ -43,13 +42,11 @@ class DrinksMenu{
       */
 
       //TODO: Reducer dette til en linje ved at anvende TextUI metoden displayList() i stedet for
-      for (String option : options) {
-          System.out.println(option);
-      }
 
-  
+      ui.diplayMenu(options);
+
     /*
-    Vi spørger om antal af drinks, så vi ved mange gange vi skal prompte i while loopet længere nede. 
+    Vi spørger om antal af drinks, så vi ved hvor mange gange vi skal prompte i while loopet længere nede.
     Hvert valg placerer vi i en liste, så vi kan udskrive bestillingen tilsidst.
     */
 
@@ -69,10 +66,9 @@ class DrinksMenu{
 
       while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
         //TODO: Reducer dette til en linje ved at anvende TextUI metoden getChoice(options) i stedet for
-        System.out.println("Vælg en drink fra listen: ");
-       	String choice = scan.nextLine();
+          String choice =  ui.getChoice(options, "Vælg en drink fra listen: " );
 
-       	choices.add(choice);
+          choices.add(choice);
    		}
 
 
@@ -81,7 +77,7 @@ class DrinksMenu{
       Vi viser listen til brugeren
       */
       //TODO: Genbrug TextUI metoden displayList(choices) i stedet for
-   	  System.out.println("Du har bestilt flg.: ");    
+   	  System.out.println("Du har bestilt flg.: ");
       for(String choice: choices){
       System.out.println(choice);
     }
