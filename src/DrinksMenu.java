@@ -65,10 +65,10 @@ class DrinksMenu{
 
 
       //TODO 5: Reducer 6 linjer til 1 linje ved at anvende TextUI metoden promptChoice() i stedet for
-      ArrayList<String> choices = new ArrayList<String>();  //Lave en beholder til at gemme brugerens valg
+      ArrayList<Integer> choices = new ArrayList<>();  //Lave en beholder til at gemme brugerens valg
         while(choices.size() < numberOfDrinks){             //tjekke om brugeren skal vælge flere drinks
             System.out.println("Vælg en drink fra listen: ");
-       	    String choice = scan.nextLine();
+       	    int choice = scan.nextInt();
             choices.add(choice);
    		}
 
@@ -79,8 +79,8 @@ class DrinksMenu{
       */
       //TODO 6: Genbrug TextUI metoden displayList(choices) i stedet for
    	  System.out.println("Du har bestilt flg.: ");
-      for(String choice: choices){
-        System.out.println(choice);
+      for(int choice: choices){
+        System.out.println(options.get(choice-1));
       }
 
 
