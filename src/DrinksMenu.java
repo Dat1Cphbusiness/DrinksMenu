@@ -85,13 +85,8 @@ class DrinksMenu{
 
 
 
-   /* Mulige forbedringer af denne dialog:
-    1. Valgmulighederne printes med et tal, så man bare taster et tal for en bestemt drink - hvor kan vi ændre på det og hvordan?
-    2. Validering af at det der er blevet lagt ind i choices rent faktisk findes i menuen - som det er nu kan man bestille hvad somhelst.
-    3. Refaktorering: det hele bør ikke ligge inde i main.
-       a. Vi bør refaktorere for at minimere gentagelser (DRY) fx. visning af lister,
-       b. men vi bør også refaktorere for at kunne genbruge dialog mønsteret i et helt andet projekt, hvor det ikke nødvendigvis handler om drinks, men om en anden slags menu.
-    */
+      // todo: Validering af at det der er blevet lagt ind i choices rent faktisk findes i menuen - som det er nu kan man bestille hvad somhelst.
+
 
   }
 
