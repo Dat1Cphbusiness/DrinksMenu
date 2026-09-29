@@ -27,7 +27,7 @@ class DrinksMenu{
     */
 
 
-      ArrayList<String> options = new ArrayList<String>();
+      ArrayList<String> options = new ArrayList<>();
 
       if (age >= 18) {
           options.add("Gin&Tonic");
